@@ -1,0 +1,30 @@
+@use 'sass:map' as map;
+@use '../../styles/variables' as vars;
+
+@mixin media-query($breakpoint) {
+  @if map.has-key(vars.$breakpoints, $breakpoint) {
+    @media (min-width: #{map.get(vars.$breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn 'Unknown breakpoint: #{$breakpoint}.';
+  }
+}
+
+.container {
+  --container-width: 100%;
+  --container-padding-x: var(--spacing-md);
+  --container-padding-y: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  width: var(--container-width);
+  max-width: 100%;
+  padding: var(--container-padding-x) var(--container-padding-y);
+  margin-inline: auto;
+
+  @each $key, $value in vars.$breakpoints {
+    @include media-query($key) {
+      --container-width: #{map.get(vars.$containers, $key)};
+    }
+  }
+}

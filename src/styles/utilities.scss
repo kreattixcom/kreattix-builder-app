@@ -1,0 +1,70 @@
+@use 'variables' as vars;
+
+$utilities: (
+  display: (
+    propertyName: display,
+    class: d,
+    values: block inline inline-block flex inline-flex grid inline-grid table table-row
+      table-cell none
+  ),
+  align-items: (
+    propertyName: align-items,
+    class: items,
+    values: vars.$align-items
+  ),
+  justify-content: (
+    propertyName: justify-content,
+    class: justify,
+    values: vars.$justify-content
+  ),
+  height: (
+    propertyName: height,
+    class: h,
+    values: vars.$heights
+  ),
+  max-height: (
+    propertyName: max-height,
+    class: max-h,
+    values: vars.$heights
+  ),
+  min-height: (
+    propertyName: min-height,
+    class: min-h,
+    values: vars.$heights
+  ),
+  width: (
+    propertyName: width,
+    class: w,
+    values: vars.$widths
+  ),
+  max-width: (
+    propertyName: max-width,
+    class: max-w,
+    values: vars.$widths
+  ),
+  min-width: (
+    propertyName: min-width,
+    class: min-w,
+    values: vars.$widths
+  ),
+  weight: (
+    propertyName: font-weight,
+    class: weight,
+    values: vars.$font-weights
+  ),
+  gap: (
+    propertyName: gap,
+    class: gap,
+    values: vars.$spacings
+  ),
+  flex-direction: (
+    propertyName: flex-direction,
+    class: flex,
+    values: vars.$flex-directions
+  ),
+  font-size: (
+    propertyName: font-size,
+    class: text,
+    values: vars.$font-sizes
+  )
+);

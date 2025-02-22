@@ -1,0 +1,6 @@
+@use '../../styles/variables' as config;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+}

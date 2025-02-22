@@ -1,0 +1,127 @@
+.button {
+  --btn-padding-y: var(--spacing-sm);
+  --btn-padding-x: var(--spacing-md);
+  --btn-radius: var(--radius-md);
+  --btn-border-width: 1px;
+  --btn-border-color: var(--color-border);
+  --btn-font-size: var(--font-size-md);
+  --btn-line-height: var(--line-height-md);
+  --btn-font-weight: var(--weight-medium);
+  --btn-font-family: var(--font-family-base);
+  --btn-background: var(--color-default-contrast);
+  --btn-color: var(--color-default-main);
+  --btn-background-hover: var(--color-default-hover-contrast);
+  --btn-color-hover: var(--color-default-hover);
+  --btn-transition: var(--transition-base);
+  --btn-ripple-color: var(--btn-color);
+  --btn-ripple-opacity: 0.3;
+  --btn-gap: var(--spacing-xs);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--btn-gap);
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  border: var(--btn-border-width) solid var(--btn-border-color);
+  background-color: var(--btn-background);
+  color: var(--btn-color);
+  border-radius: var(--btn-radius);
+  font-size: var(--btn-font-size);
+  line-height: var(--btn-line-height);
+  font-weight: var(--btn-font-weight);
+  font-family: var(--btn-font-family);
+  transition: var(--btn-transition);
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+
+  &:hover {
+    background-color: var(--btn-background-hover);
+    color: var(--btn-color-hover);
+  }
+
+  &-current {
+    --btn-background: var(--color-default-main);
+    --btn-color: var(--color-default-contrast);
+    --btn-background-hover: var(--color-default-hover);
+    --btn-color-hover: var(--color-default-hover-contrast);
+  }
+  &-primary {
+    --btn-background: var(--color-primary-main);
+    --btn-color: var(--color-primary-contrast);
+    --btn-background-hover: var(--color-primary-hover);
+    --btn-color-hover: var(--color-primary-hover-contrast);
+  }
+
+  &-plain {
+    background-color: transparent;
+    --btn-color: var(--btn-background);
+    --btn-border-width: 0;
+    --btn-padding-y: 0;
+    --btn-padding-x: 0;
+    &:hover {
+      background-color: transparent;
+      --btn-color-hover: var(--btn-background-hover);
+    }
+  }
+
+  &:after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 0%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-circle);
+    background-color: var(--btn-ripple-color);
+    transition: all 0.25s ease-in-out;
+    opacity: 0;
+  }
+
+  &:focus-visible:not(:active) {
+    &:after {
+      width: 80%;
+      animation: focus-ripple 0.8s ease-in-out alternate infinite;
+      opacity: var(--btn-ripple-opacity);
+      transform: scale(0);
+    }
+  }
+  &:active {
+    &:after {
+      width: 100%;
+      opacity: var(--btn-ripple-opacity);
+      transform: scale(1);
+    }
+  }
+}
+
+.ripple {
+  position: absolute;
+  opacity: var(--btn-ripple-opacity);
+  pointer-events: none;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.7s ease-in-out forwards;
+  background-color: var(--btn-ripple-color);
+  aspect-ratio: 1/1;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+@keyframes focus-ripple {
+  0% {
+    transform: scale(0.95);
+  }
+  40% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,15 @@
+.card {
+  --card-background: var(--color-default-main);
+  --card-padding-x: var(--spacing-md);
+  --card-padding-y: var(--spacing-md);
+  --card-radius: var(--radius-md);
+  --card-border-color: var(--color-border);
+  --card-border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--card-background);
+  padding: var(--card-padding-x) var(--card-padding-y);
+  border-radius: var(--card-radius);
+  border: var(--card-border-width) solid var(--card-border-color);
+}

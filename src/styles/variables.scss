@@ -1,0 +1,184 @@
+$red: (
+  50: oklch(0.971 0.013 17.38),
+  100: oklch(0.936 0.032 17.717),
+  200: oklch(0.885 0.062 18.334),
+  300: oklch(0.808 0.114 19.571),
+  400: oklch(0.704 0.191 22.216),
+  500: oklch(0.637 0.237 25.331),
+  600: oklch(0.577 0.245 27.325),
+  700: oklch(0.505 0.213 27.518),
+  800: oklch(0.444 0.177 26.899),
+  900: oklch(0.396 0.141 25.723),
+  950: oklch(0.258 0.092 26.042)
+);
+
+$blue: (
+  50: oklch(0.97 0.014 254.604),
+  100: oklch(0.932 0.032 255.585),
+  200: oklch(0.882 0.059 254.128),
+  300: oklch(0.809 0.105 251.813),
+  400: oklch(0.707 0.165 254.624),
+  500: oklch(0.623 0.214 259.815),
+  600: oklch(0.546 0.245 262.881),
+  700: oklch(0.488 0.243 264.376),
+  800: oklch(0.424 0.199 265.638),
+  900: oklch(0.379 0.146 265.522),
+  950: oklch(0.282 0.091 267.935)
+);
+
+$violet: (
+  50: oklch(0.969 0.016 293.756),
+  100: oklch(0.943 0.029 294.588),
+  200: oklch(0.894 0.057 293.283),
+  300: oklch(0.811 0.111 293.571),
+  400: oklch(0.702 0.183 293.541),
+  500: oklch(0.606 0.25 292.717),
+  600: oklch(0.541 0.281 293.009),
+  700: oklch(0.491 0.27 292.581),
+  800: oklch(0.432 0.232 292.759),
+  900: oklch(0.38 0.189 293.745),
+  950: oklch(0.283 0.141 291.089)
+);
+
+$zinc: (
+  50: oklch(0.985 0 0),
+  100: oklch(0.967 0.001 286.375),
+  200: oklch(0.92 0.004 286.32),
+  300: oklch(0.871 0.006 286.286),
+  400: oklch(0.705 0.015 286.067),
+  500: oklch(0.552 0.016 285.938),
+  600: oklch(0.442 0.017 285.786),
+  700: oklch(0.37 0.013 285.805),
+  800: oklch(0.274 0.006 286.033),
+  900: oklch(0.21 0.006 285.885),
+  950: oklch(0.141 0.005 285.823)
+);
+
+$colors: (
+  red: $red,
+  blue: $blue,
+  violet: $violet,
+  zinc: $zinc
+);
+
+$font-sizes: (
+  xs: 12px,
+  sm: 14px,
+  md: 16px,
+  lg: 20px,
+  xl: 24px,
+  2xl: 32px,
+  3xl: 48px
+);
+$line-heights: (
+  xs: 16px,
+  sm: 20px,
+  md: 24px,
+  lg: 32px,
+  xl: 40px,
+  2xl: 48px,
+  3xl: 64px
+);
+$font-weights: (
+  thin: 100,
+  extralight: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  'black': 900
+);
+
+$spacings: (
+  none: 0,
+  xs: 4px,
+  sm: 8px,
+  md: 16px,
+  lg: 24px,
+  xl: 32px,
+  2xl: 48px,
+  3xl: 64px
+);
+
+$radius: (
+  none: 0,
+  xs: 2px,
+  sm: 4px,
+  md: 8px,
+  lg: 16px,
+  xl: 24px,
+  2xl: 32px,
+  3xl: 48px,
+  full: 9999px,
+  circle: 50%
+);
+
+$heights: (
+  half: 50%,
+  full: 100%,
+  screen: 100vh
+);
+
+$widths: (
+  xs: 320px,
+  sm: 480px,
+  md: 640px,
+  lg: 800px,
+  xl: 960px,
+  2xl: 1120px,
+  3xl: 1280px,
+  half: 50%,
+  full: 100%,
+  screen: 100vw
+);
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$containers: (
+  xs: 100%,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+$align-items: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  stretch: stretch,
+  baseline: baseline
+);
+
+$justify-content: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly
+);
+
+$flex-directions: (
+  row: row,
+  column: column,
+  row-reverse: row-reverse,
+  column-reverse: column-reverse
+);
+
+$transitions: (
+  slow: all 0.5s ease-in-out,
+  base: all 0.3s ease-in-out,
+  fast: all 0.1s ease-in-out,
+  none: none
+);

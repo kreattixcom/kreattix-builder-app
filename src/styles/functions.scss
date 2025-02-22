@@ -1,0 +1,45 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use 'utilities' as utilities;
+
+@function to-css-var($map, $prefix: '') {
+  $css-var: ();
+  @each $key, $value in $map {
+    @if (meta.type-of($value) == map) {
+      $css-var: map.merge($css-var, to-css-var($value, $prefix + $key + '-'));
+    } @else {
+      $css-var: map.merge($css-var, ($prefix + $key: $value));
+    }
+  }
+  @return $css-var;
+}
+
+@mixin utility-values($class, $slug, $propertyName, $value) {
+  .#{$class}-#{$slug} {
+    @if (meta.type-of($propertyName) == list) {
+      @each $prop in $propertyName {
+        #{$prop}: $value;
+      }
+    } @else {
+      #{$propertyName}: $value;
+    }
+  }
+}
+
+@mixin generate-utilities {
+  @each $property, $config in utilities.$utilities {
+    $propertyName: map.get($config, propertyName);
+    $class: map.get($config, class);
+    $values: map.get($config, values);
+
+    @if (meta.type-of($values) == map) {
+      @each $key, $value in $values {
+        @include utility-values($class, $key, $propertyName, $value);
+      }
+    } @else {
+      @each $value in $values {
+        @include utility-values($class, $value, $propertyName, $value);
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@use 'sass:map';
+@use 'functions' as functions;
+@use 'variables' as vars;
+
+$light-colors: (
+  background: var(--color-zinc-50),
+  foreground: var(--color-zinc-950),
+  border: var(--color-zinc-300),
+  muted: var(--color-zinc-600),
+  default: (
+    main: var(--color-zinc-50),
+    contrast: var(--color-zinc-950),
+    hover: var(--color-zinc-300),
+    hover-contrast: var(--color-zinc-800)
+  ),
+  primary: (
+    main: var(--color-violet-600),
+    contrast: var(--color-zinc-50),
+    hover: var(--color-violet-700),
+    hover-contrast: var(--color-zinc-300)
+  )
+);
+
+$dark-colors: (
+  background: var(--color-zinc-950),
+  foreground: var(--color-zinc-50),
+  border: var(--color-zinc-800),
+  muted: var(--color-zinc-500),
+  default: (
+    main: var(--color-zinc-950),
+    contrast: var(--color-zinc-50),
+    hover: var(--color-zinc-800),
+    hover-contrast: var(--color-zinc-300)
+  ),
+  primary: (
+    main: var(--color-violet-600),
+    contrast: var(--color-zinc-50),
+    hover: var(--color-violet-700),
+    hover-contrast: var(--color-zinc-300)
+  )
+);
+
+$theme-colors: $dark-colors;
+
+$vars: (
+  color: map.merge(vars.$colors, $theme-colors),
+  font-family-base: #{'Inter, sans-serif'},
+  font-size-base: map.get(vars.$font-sizes, md),
+  line-height-base: map.get(vars.$line-heights, md),
+  spacing: vars.$spacings,
+  radius: vars.$radius,
+  weight: vars.$font-weights,
+  font-size: vars.$font-sizes,
+  line-height: vars.$line-heights,
+  transition: vars.$transitions
+);
+
+:root {
+  @each $key, $value in functions.to-css-var($vars) {
+    --#{$key}: #{$value};
+  }
+}
+
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+@include functions.generate-utilities;

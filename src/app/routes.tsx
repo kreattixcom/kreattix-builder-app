@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import CounterPage from '../pages/counter/CounterPage'
+import { LoginPage } from '../pages/login/Loginpage'
 
-export const routes = createBrowserRouter([{ path: '/', element: <CounterPage /> }])
+export const routes = createBrowserRouter([{ path: '/', element: <LoginPage /> }])
