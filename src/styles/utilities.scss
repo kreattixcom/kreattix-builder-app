@@ -66,5 +66,10 @@ $utilities: (
     propertyName: font-size,
     class: text,
     values: vars.$font-sizes
+  ),
+  font-weight: (
+    propertyName: font-weight,
+    class: font,
+    values: vars.$font-weights
   )
 );

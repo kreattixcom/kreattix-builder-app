@@ -19,7 +19,7 @@ export const LoginPage = () => {
         <Container items="center" gap="lg">
           <Space width="md" gap="sm">
             <Icon icon={LogoIcon} size="lg" />
-            <Text.Title>Kreattix Builder</Text.Title>
+            <Text.Title weight="bold">Kreattix Builder</Text.Title>
           </Space>
           <Card width="md" gap="lg">
             <Box>
